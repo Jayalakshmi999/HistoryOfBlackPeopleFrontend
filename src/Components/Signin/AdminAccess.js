@@ -13,14 +13,14 @@ const AdminAccess = ({user,isLogin,setLogins,admind}) => {
   }, [users]);
 
   const loadUsers = async () => {
-    const result = await axios.get("https://app-qc1f.onrender.com/allusers");
+    const result = await axios.get("https://app-3bdk.onrender.com/allusers");
     setUsers(result.data);
     console.log(result.data)
   };
 
   const addAdmin=(em)=>{
     console.log(em)
-     axios.get("https://app-qc1f.onrender.com/add",{
+     axios.get("https://app-3bdk.onrender.com/add",{
       params:{
         email:em
         
@@ -35,7 +35,7 @@ const AdminAccess = ({user,isLogin,setLogins,admind}) => {
   }
 
   const delAdmin=(email)=>{
-    axios.delete(`https://app-miok.onrender.com/deleteadmin/${email}`)
+    axios.delete(`https://app-3bdk.onrender.com/deleteadmin/${email}`)
     .then(res=>{
       alert("Disabled access successfully")
       loadUsers()
